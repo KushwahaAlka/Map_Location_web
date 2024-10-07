@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: Arial, sans-serif;
+      }
+
+     
+      .front-page {
+        background-image: url('https://news.sophos.com/wp-content/uploads/2020/02/shutterstock_525154717-compressor.jpg'); /* Add your image URL here */
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: 100% 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: rgb(10, 9, 9);
+        text-align: center;
+        padding: 20px;
+      }
+
+      /* Instructions box style */
+      .instructions {
+        background-color: rgba(10, 2, 2, 0.2);
+        padding: 20px;
+        border-radius: 10px;
+        width: 50%;
+        margin-bottom: 20px;
+        display: none;
+      }
+
+      .instructions.active {
+        display: block;
+      }
+
+      /* Button style */
+      .btn {
+        margin-top: 15px;
+        background-color: #007bff;
+        color: white;
+        border-radius: 25px;
+        padding: 15px 30px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background-color: #0056b3;
+      }
+
+      /* Instruction trigger */
+      .show-instructions {
+        background-color: #fff;
+        color: #000;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        margin-top: 20px;
+        cursor: pointer;
+        border-radius: 15px;
+      }
+
+      .show-instructions:hover {
+        background-color: #ddd;
+      }
+    </style>
+    <title>Google Maps Clone - Front Page</title>
+  </head>
+  <body>
+    <!-- Front page with background and instructions -->
+    <div class="front-page">
+      <h1>Welcome to Location Tracker</h1>
+      <p>Your one-stop solution to track locations and get directions.</p>
+      
+      <!-- Instructions box -->
+      <div class="instructions" id="instructions">
+        <h2>How to Use</h2>
+        <p>1. Open the map on the next page.</p>
+        <p>2. Enter your current location and destination to get directions.</p>
+        <p>3. Explore various features for enhanced navigation.</p>
+      </div>
+
+      <!-- Button to show instructions -->
+      <button class="show-instructions" onclick="toggleInstructions()">Click here for instructions</button>
+
+      <!-- Main page button -->
+      <button class="btn" onclick="location.href='map.html'">Go to Map</button>
+    </div>
+
+    <script>
+      // Function to toggle instructions visibility
+      function toggleInstructions() {
+        const instructions = document.getElementById('instructions');
+        if (instructions.classList.contains('active')) {
+          instructions.classList.remove('active');
+        } else {
+          instructions.classList.add('active');
+        }
+      }
+    </script>
+  </body>
